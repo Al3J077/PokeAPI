@@ -1,44 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <title>PokeAPI</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>PokéApp</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icono.png">
 </head>
 <body>
-    <h1>PokeAPI</h1>
-    <main id="app">
-        <!--CONTENIDO DINAMICO-->
-    </main>
 
-<aside class="c-menu"><!--Dentro del aside van los botones-->
+  <div id="splash">
+    <img src="icono.png" alt="Logo">
+    <h1>PokéApp</h1>
+  </div>
 
-<button class="c-nav-item"
-onclick="general()">Menu</button>
-<button class="c-nav-item"
-onclick="mostrarAleatorios()">Aleatorios</button>
-<button class="c-nav-item"
-onclick="mostrarUsuarios()">Usuarios</button>
-<button class="c-nav-item"
-onclick="mostrarFavoritos()">Favoritos</button>
-<button class="c-nav-item"
-onclick="mostrarCapturados()">Capturados</button>
-<button class="c-nav-item"
-onclick="mostrarDetalles()">Detalles</button>
-<button class="c-nav-item"
-onclick="mostrarLista()">Lista</button>
+  <div id="app" style="display: none;">
+    <nav class="tabs">
+      <button onclick="mostrarPestaña('lista')">Pokédex</button>
+      <button onclick="mostrarPestaña('detalle')">Detalle</button>
+      <button onclick="mostrarPestaña('aleatorio')">Aleatorio</button>
+      <button onclick="mostrarPestaña('capturados')">Capturados</button>
+      <button onclick="mostrarPestaña('favoritos')">Favoritos</button>
+      <button onclick="mostrarPestaña('usuario')">Usuario</button>
+    </nav>
 
-</aside>
+    <div id="lista" class="tab active"></div>
+    <div id="detalle" class="tab"></div>
+    <div id="aleatorio" class="tab"></div>
+    <div id="capturados" class="tab"></div>
+    <div id="favoritos" class="tab"></div>
+    <div id="usuario" class="tab"></div>
 
-    <script src="js/api.js"></script> <!--SIEMPRE SE LLAMA DE PRIMERAS EL API.JS-->
-    <script src="js/aleatorio.js"></script>
-    <script src="js/capturados.js"></script>
-    <script src="js/detalle.js"></script>
-    <script src="js/favoritos.js"></script>
-    <script src="js/lista.js"></script>
-    <script src="js/usuario.js"></script>
+    <footer>
+      <button onclick="mostrarPestaña('lista')">Inicio</button>
+      <button onclick="mostrarPestaña('favoritos')">Favoritos</button>
+      <button onclick="mostrarPestaña('usuario')">Perfil</button>
+    </footer>
+  </div>
 
-    <script>
-        document.addEventListner("DOMContentLoaded",general);
-    </script>
+  <!-- Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/aleatorio.js"></script>
+  <script src="js/capturados.js"></script>
+  <script src="js/detalle.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/lista.js"></script>
+  <script src="js/usuario.js"></script>
+
 </body>
 </html>

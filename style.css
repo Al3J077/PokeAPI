@@ -1,47 +1,60 @@
-*{
+body {
     margin: 0;
-    box-sizing: border-box;
-}
-
-button{
-    background-color: transparent;
-    border: unset;
-    cursor: pointer;
-    margin: 0;
-    transition: 0.5s;
-}
-/* lista */
-.c-lista{
+    font-family: sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+  }
+  
+  #splash {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: black;
+    animation: fadeOut 2s ease-in-out 2s forwards;
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  .tabs, footer {
+    display: flex;
+    justify-content: space-around;
+    background: #1c1c1c;
+    padding: 10px;
+  }
+  
+  .tab {
+    display: none;
+    padding: 15px;
+  }
+  
+  .tab.active {
+    display: block;
+  }
+  
+  .lista-pokemon {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 10px;
-    flex-wrap: wrap;
-}
-
-.c-lista-pokemon{
-    background-color: aliceblue;
-    width: calc(50% - 5px);
+  }
+  
+  .pokemon-card {
+    background: #1e1e1e;
+    border-radius: 10px;
     padding: 10px;
     text-align: center;
-}
-
-/* navegacion */
-.c-nav{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: silver;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px 15px;
-    gap: 10px;
-}
-
-.c-nav-item{
-    width: calc(25% - 7.5px);
-    background-color: red;
-}
-.c-nav-item:hover{
-    color: yellow;
+    box-shadow: 0 0 5px #222;
+  }
+  
+  .capturados-lista,
+.favoritos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
 }

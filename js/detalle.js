@@ -1,0 +1,55 @@
+document.getElementById('detalle').innerHTML = '<h2>Detalle de Pokémon</h2><p>Selecciona un Pokémon para ver más información.</p>';
+
+window.verDetalle = async function(id) {
+    mostrarPestaña('detalle');
+  
+    const container = document.getElementById('detalle');
+    container.innerHTML = '<p>Cargando detalles...</p>';
+  
+    try {
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+      const data = await res.json();
+  
+      const tipos = data.types.map(t => t.type.name).join(', ');
+      const stats = data.stats.map(s => `<li>${s.stat.name}: ${s.base_stat}</li>`).join('');
+  
+      container.innerHTML = `
+  <h2>${data.name.toUpperCase()}</h2>
+  <img src="${data.sprites.front_default}" alt="${data.name}">
+  <p><strong>ID:</strong> #${data.id}</p>
+  <p><strong>Tipo(s):</strong> ${tipos}</p>
+  <h3>Estadísticas</h3>
+  <ul>${stats}</ul>
+
+  <button onclick="capturarPokemon(${data.id}, '${data.name}')">📥 Capturar</button>
+  <button onclick="agregarFavorito(${data.id}, '${data.name}')">⭐ Agregar a Favoritos</button>
+`;
+
+    } catch (error) {
+      container.innerHTML = '<p>Error al cargar los detalles del Pokémon.</p>';
+      console.error(error);
+    }
+  }
+  
+  function capturarPokemon(id, nombre) {
+    let capturados = JSON.parse(localStorage.getItem('capturados')) || [];
+    if (!capturados.find(p => p.id === id)) {
+      capturados.push({ id, nombre });
+      localStorage.setItem('capturados', JSON.stringify(capturados));
+      alert(`${nombre} ha sido capturado!`);
+    } else {
+      alert(`${nombre} ya está capturado.`);
+    }
+  }
+  
+  function agregarFavorito(id, nombre) {
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    if (!favoritos.find(p => p.id === id)) {
+      favoritos.push({ id, nombre });
+      localStorage.setItem('favoritos', JSON.stringify(favoritos));
+      alert(`${nombre} agregado a favoritos!`);
+    } else {
+      alert(`${nombre} ya está en favoritos.`);
+    }
+  }
+  
