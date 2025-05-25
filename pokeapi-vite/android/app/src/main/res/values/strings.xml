@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">pokeapi-vite</string>
+    <string name="title_activity_main">pokeapi-vite</string>
+    <string name="package_name">com.pokeapi.app</string>
+    <string name="custom_url_scheme">com.pokeapi.app</string>
+</resources>

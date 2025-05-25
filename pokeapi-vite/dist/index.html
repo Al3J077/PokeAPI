@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PokéApp</title>
+  
+  <link rel="icon" href="./icono.png">
+  <script type="module" crossorigin src="/assets/index-3b16c9cc.js"></script>
+  <link rel="stylesheet" href="/assets/index-5feeea75.css">
+</head>
+<body>
+
+  <div id="splash">
+    <img src="./icono.png" alt="Logo">
+    <h1>PokéApp</h1>
+  </div>
+
+  <div id="app" style="display: none;">
+    <nav class="tabs">
+      <button onclick="mostrarPestaña('lista')">Pokédex</button>
+      <button onclick="mostrarPestaña('detalle')">Detalle</button>
+      <button onclick="mostrarPestaña('aleatorio')">Aleatorio</button>
+      <button onclick="mostrarPestaña('capturados')">Capturados</button>
+      <button onclick="mostrarPestaña('favoritos')">Favoritos</button>
+      <button onclick="mostrarPestaña('usuario')">Usuario</button>
+    </nav>
+
+    <div id="lista" class="tab active"></div>
+    <div id="detalle" class="tab"></div>
+    <div id="aleatorio" class="tab"></div>
+    <div id="capturados" class="tab"></div>
+    <div id="favoritos" class="tab"></div>
+    <div id="usuario" class="tab"></div>
+
+    <footer>
+      <button onclick="mostrarPestaña('lista')">Inicio</button>
+      <button onclick="mostrarPestaña('favoritos')">Favoritos</button>
+      <button onclick="mostrarPestaña('usuario')">Perfil</button>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  
+  
+  
+  
+  
+  
+  
+  
+
+</body>
+</html>

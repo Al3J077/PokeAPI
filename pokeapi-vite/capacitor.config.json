@@ -1,0 +1,5 @@
+{
+  "appId": "com.pokeapi.app",
+  "appName": "pokeapi-vite",
+  "webDir": "dist"
+}
