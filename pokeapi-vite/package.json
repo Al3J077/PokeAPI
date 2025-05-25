@@ -1,0 +1,22 @@
+{
+  "name": "pokeapi-vite",
+  "version": "1.0.0",
+  "description": "A Pokémon application using Vite and PokeAPI.",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vite": "^4.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "pokemon",
+    "vite",
+    "pokeapi"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+}
+
+#splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: black;
+    animation: fadeOut 2s ease-in-out 2s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.tabs, footer {
+    display: flex;
+    justify-content: space-around;
+    background: #1c1c1c;
+    padding: 10px;
+}
+
+.tab {
+    display: none;
+    padding: 15px;
+}
+
+.tab.active {
+    display: block;
+}
+
+.lista-pokemon {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.pokemon-card {
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 5px #222;
+}
+
+.capturados-lista,
+.favoritos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
